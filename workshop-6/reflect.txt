@@ -1,0 +1,73 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #6
+Full Name  :Tejasvi Nitinkumar Parmar 
+Student ID#:
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+ANSWER - 01  Yes, in this part-2 code, I used parallel arrays because parallel arrays store the related data in separate arrays.
+             In simple words, store different data types with the same size of arrays. So, in my code, I used three arrays:
+             
+             a) costItem []- An array to store the cost of each item. 
+             b) IMPROTANT_ITEM []- An array to store the priority of each item.(in integer type)
+             c) financeItem []- An array to store financing options in form YES/NO.(in char type)
+
+             *** My code reference in these part-2 *** ( for example)
+             
+             01) double costItem[MAX_ITEMS]:- store the value with type data of double the value of maximum items is 10 as defined macro.
+
+             We use array because of:-
+
+             a) Simplifies the data by keeping related data together in a proper manner.
+             b) It allows flexibility in data handling. We can perform operations easily to change specific data without affecting others.
+             c) Parallel arrays are compatible with many programming  languages  and are easy to understand for programmers of all skills level. 
+
+
+    ANSWER - 02 The most appropriate iteration construct is FOR loop with the array because it allows you to initialize a counter check condition and also a increment or decrement the counter in all one line as I used in the code and below is the example.
+                 a) For loop:-
+                
+                for (i = 0; i < listItems; i++)
+			{
+				total += costItem[i];
+				if (financeItem[i] == 'y')
+				{
+					SELECTION = 1;
+				}
+			}
+
+            This loop iterates over the array, starting from index 0 up to index equal to listItems - 1, which represents the number of items entered by the user.
+
+Here, b & c are the other option of iteration construct that used instead of for loop:-
+
+            b) while loop:-
+
+            i = 0;
+            while (i < costItem)
+            {
+            total += listItems [i];
+            }
+
+            c) do-while:-
+            
+            i = 0;
+            do {
+            total += costItem[i];
+            i++;
+            } while (i < listItems);
+
+
+Answer - 03 To test my program, I tested with boundary values for input variables (minimum and maximum income values).
+            That helps me to ensure that my program behaves correctly at the extremes of its input domain.
+            Secondly, normal testing, as I provided typical input replicates the typical user situation. Apart from that intentionally provided invalid inputs to test the program's error.
+
+            So, I debug my program by following the steps: first, I clean the solution, and then build. If it succeeded then my code executed properly, if the build solution failed its show me error of syntax line by line .
+            Compilation errors (syntactic problem), when I encountering the compilation errors, these messages provided by the compiler and shows the error of column, semicolons, mismatched parentheses or misspelled variable names. I then corrected the errors accordingly.
+            Logical error ( semantic problems), are more challenging to identify and debug.
+            I carefully reviewed the code to identify the inconsistencies. I sought the feedback from mentors by reviewing the code together.
+            Sometimes, I carefully read the code to find my error. And I think being patient and writing the code with concentration is very important.
