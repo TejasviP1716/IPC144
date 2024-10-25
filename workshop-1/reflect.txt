@@ -1,0 +1,23 @@
+###########################################################################
+
+                              Reflection
+                             Workshop - #1
+Full Name  : Tejasvi parmar
+Section    : ZDD
+
+Authenticity Declaration:
+
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+###########################################################################
+
+
+Answer 01- 
+I learned HTML and CSS in high school, and of course I know the basics of C programming. So, because of this, I am excited to gain in-depth knowledge of this language. And from my high school years, the software of computers always fascinates me (how all these functions work and what's the structure or code behind this technology that works so perfectly), and I came across this course where I got the chance to learn different languages and boost my knowledge in tech.Â 
+
+Answer 02- 
+At first, the text file is converted into an executable file by compilers analyzing the source file and translating the text into machine code. This creates an object file, and a "linker" program gathers all the data.
+
+Answer 03- 
+My expectations from this CPA course are high, as I will develop lots of skills in different aspects as I understand the programming concepts, develop problem-solving skills, and gain knowledge of real-world applications (learn how the concepts taught in the course apply to real-world scenarios). My future plans are so simple, as this course prepares me to make my career in the tech field. Therefore, I would love to work as a software engineer or a data analyst.
