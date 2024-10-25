@@ -1,0 +1,97 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #4
+Full Name  : Tejasvi Nitinkumar Parmar
+Student ID#: 
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+
+Answer-01 Sure, I would love to explain the difference between the 'While' and 'do/while' loop. Both are used for looping in programming.
+
+While loop- The syntax of this loop is:-
+            while(condition)
+             {
+               }
+
+        The loop's statements are executed after the condition has been verified. The loop's statements won't be run at all if the condition evaluates to false at the beginning.
+
+Here is the small example:-
+
+    while (oranges < 0)
+    {
+        printf("How many ORANGES do you need? : ");
+        scanf(" %d", &oranges);
+        if (oranges < 0)
+
+        {
+            printf("ERROR: Value must be 0 or more.\n");
+        }
+    }
+In this it will first check the condition that oranges are greater than zero it it is true than it prints the statement of 'How many.......' then it checks the if condition and proceed further.
+
+
+
+
+Do/While loop- The syntax of this loop is:-
+          do
+            {
+               } while(condition)
+
+After the loop's statements are performed, the condition is examined. This indicates that regardless of the circumstance, the loop will always execute at least once.
+
+So, this who both works.
+
+
+
+
+
+
+
+
+
+Answer-02   
+
+
+ while (tomatoes > 0)
+ {
+     printf("Pick some TOMATOES... how many did you pick? : ");
+     scanf(" %d", &i);
+     if (i > tomatoes)
+     {
+         printf("You picked too many... only %d more TOMATO(ES) are needed.\n", tomatoes);
+     }
+     else if (i <= 0)
+     {
+         printf("ERROR: You must pick at least 1!\n");
+     }
+     else
+     {
+         tomatoes -= i;
+         if (tomatoes > 0)
+         {
+             printf("Looks like we still need some TOMATOES...\n");
+         }
+         else
+             printf("Great, that's the tomatoes done!");
+     }
+ }
+ printf("\n");
+
+
+1)A while loop is initiated with the expression while (tomatoes > 0). As long as there are more tomatoes than zero (the necessary number of tomatoes), the loop will keep going.
+
+2)Than print the statement, and after that check the condition of if statement and continue.
+
+
+
+
+Answer-03 The "while loop" is my favorite iteration construct. Code can be repeatedly run using a while loop in response to a specified Boolean condition. You can think of the while loop as an iterative if statement. The code is run until a condition is no longer true. Similar to the while loop, the "do while loop" is rarely used because most programs don't need it to function. Both the "while loop" and the "for loop" are effective. The "For loop" is incredibly user-friendly and offers you a great deal more control. Unlike while loops, which require you to specify the start, end, and increment/decrement, for loops allow for much easier customization. The main drawback is that, in contrast to "while" loops, "for" loops break when a Boolean condition is used to execute the entire loop.
+In my assignment, I have utilized a while loop more than once.
+As an illustration, Part 2 uses a single "while" loop (with several nested "while" loops) that is designed to terminate if the user hits "0" at a particular prompt. But the loop never ends if the user types "1" rather than a zero. Unlike a "while" loop, a "for" loop would require the number of iterations to be specified in advance, making it difficult to use in this situation. In this case, a "do-while" loop is also not recommended.
+
