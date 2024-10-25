@@ -1,0 +1,84 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #8
+Full Name  : Tejasvi Nitinkumar Parmar
+Student ID#:
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+Answer 01 
+The convertLbsKg function:-
+
+double convertLbsKg(const double* pounds, double* equalKg)
+{
+	double kilograms;
+	kilograms = (*pounds) / CONVERSION_FACTOR;
+	if (equalKg != NULL)
+	{
+		*equalKg = kilograms;
+	}
+	return  kilograms;
+}
+
+As, this function gives return one value in two different ways:-
+a) Returning via pointer - it allows the caller to  receive the converted weight in kilograms through pointer argument (equalKg). If equalKg is not NULL the function assigns the converted kilograms value to it.
+                           this also enables the function to modify the value at the memory location pointed by the equalKg.
+
+b) Returning via return statement - The function calculates the converted weight in kilograms directly as 'double' value.
+
+if we break this into two separate functions -
+a)void convertLbsToKg(const double* pounds, double* equalKg);
+  this is the function to convert pounds to kilograms[ returning via pointer].
+  However, takes the weight in pounds and stores the equivalent weight in Kilograms in the memory location pointed by equalKg.
+
+b)double convertLbsToKg(const double* pounds);
+through direct return statement. So, takes the weight in pounds and directly returns to the equal weight in kilograms.
+
+
+Answer 02
+Here are some of examples of highly cohesive and loosely coupled functions that are used in this workshop:-
+a)getIntPositve(int* numPositive)- This function is highly cohesive because it has a single and well-defined purpose of getting the integer input from the user that is positive. However, it is loosely coupled because it doesn't not on other global variables or functions.
+
+b)calculateServings(const int servingSize, const int totalGrams, double* serveResult)- This function is highly cohesive because it only calculates the number of servings based on the serving size and total number of grams. It is also loosely coupled because it doesn’t depend on any other functions or global variables in the program.
+
+Similarly, the other example of highly cohesive and loosely coupled are getDoublePositive(double* numPositive), calculateCostPerServing(const double* price, const double* servings, double* costPerServing).
+
+
+Answer 03 
+The header file is also known as the user-defined library and it is a temporary file. My thoughts on this design and approach to managing these files are so convenient as it gives us:-
+a) The modularity- as it performs a specific task and this makes the code easier to understand and maintain. As,getIntPositive(int* numPositive), getDoublePositive(double* numPositive) example like this performs a specific task and can be considered a module.
+
+b) Reusability of code - functions defined in one .c file can be used in other .c files by including the corresponding .h files. For example, calculateServings, calculateCostPerCal can be used in another .c file that includes its .h files.
+
+c) Organization: Having a .h file for each .c file helps keep the code organized.
+
+d) Abstraction: The .h file provides an interface to the .c file. Other .c files that include this .h file don’t need to know the details of the implementation. They just need to know what functions are available and how to call them.
+
+struct ReportData calculateReportData(const struct CatFoodInfo catFood)
+{
+
+	struct ReportData reportInfo = { 0 };
+
+	reportInfo.skuNum = catFood.skuNumber;
+	reportInfo.prices = catFood.productPrice;
+	reportInfo.serveCalorie = catFood.calories;
+	reportInfo.lbsWgt = catFood.poundsWeight;
+	reportInfo.kgWgt = convertLbsKg(&reportInfo.lbsWgt, &reportInfo.kgWgt);
+	reportInfo.gramsWgt = convertLbsG(&reportInfo.lbsWgt, &reportInfo.gramsWgt);
+	reportInfo.servingTotal = calculateServings(SERVINGS_GRAMS, reportInfo.gramsWgt, &reportInfo.servingTotal);
+	reportInfo.servingCost = calculateCostPerServing(&reportInfo.prices, &reportInfo.servingTotal, &reportInfo.servingCost);
+
+	double calories = reportInfo.serveCalorie * reportInfo.servingTotal;
+
+	reportInfo.servingCostCalorie = calculateCostPerCal(&reportInfo.prices, &calories, &reportInfo.servingCostCalorie);
+
+	return reportInfo;
+}
+
+this is the reference that I use to help to communicate easily because this is the calculation of the reportdata table that I can do it easily as I already declare the struct of reportdata there. So, it is convenient to store the all value.
+
+
