@@ -1,0 +1,107 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #7
+Full Name  :Tejasvi Parmar 
+Student ID#: 
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+
+Answer:01 
+
+a) This is the structure definition from my code of PlayerInfo and GameInfo.
+
+//taking the structure of PlayerInfo.....
+struct PlayerInfo
+{
+	int live;
+	int moves;
+	char symbol;
+	int history[MAXIMUM_PATH_LENGHT];
+};
+
+//taking the structure of GameInfo.....
+struct GameInfo
+{
+	int move;
+	int pathLength;
+	int bombLocation[MAXIMUM_PATH_LENGHT];
+	int treasureLocation[MAXIMUM_PATH_LENGHT];
+};
+
+b) //declare variables.....
+	   int looping, count, i;
+   int valid = 0, ongoingGame = 1;
+   struct PlayerInfo player = { 0 };
+   struct GameInfo game = { 0 };
+
+	In the variable declartion, I used the structures formate:-
+	struct PlayerInfo playerInfo = { 0 };
+	struct GameInfo gameInfo = { 0 };
+
+	Instead of being grouped together in stuctures, use to separates the player and game information into individual variables in the 'int main (void)'.
+    Such as,
+	
+	// Player variables
+      int playerLive = 0;
+      int playerMove = 0;
+      char playerSymbol;
+
+    // Game variables
+     int gameMoves = 0;
+     int gameLength = 0;
+     int bombLocation[MAXIMUM_PATH_LENGTH];
+     int treasureLocation[MAXIMUM_PATH_LENGTH];
+
+
+	 Answer:02
+	 Their are three parallel arrays in my code are:	
+
+	a) // gameInfo
+	 int bombLocation[MAXIMUM_PATH_LENGHT];
+	 This array contains the information about the presence bombs along the maximum path. Each element of the array correlate with the position on the path, and stored the value that if there is a 1 for bomb and 0 for no bomb. This clearly determine that the player encounters a bomb at a particular position while moving with the path.
+
+	 int treasureLocation[MAXIMUM_PATH_LENGHT];
+	 This array contains the information about the presence treasure along the maximium path. Each element of the array correlate with the position on the path, and stored the value that if there is a 1 for treasure and 0 for no treasure. This clearly states player discovers a treasure while traversing the path.
+
+
+
+	b) // playerInfo
+	int history[MAXIMUM_PATH_LENGHT];
+	Same logic applies here ! Records the player's movements along with the maximum path. So, each element of the history array related to the position of path.
+
+
+   
+
+
+Answer03:-
+    ongoingGame = 1;
+    do {
+        if (valid)
+        {
+            printf(" ");
+            for (i = 0; i < valid - 1; i++)
+            {
+                printf(" ");
+            }
+            printf(" %c\n", player.moves);
+        }
+        else
+        {
+            printf("\n");
+        }
+        printf("  ");
+
+
+//other code omitted here
+
+}while (ongoingGame || (player.live > 0 && game.move > 0));
+
+
+The very first line of the code ongoingGame=1 is used to be control the loop or the condition elsewhere in the code.
+The if-else statement of the  if the variable is true(non-zero) than it enters the for loop and check the respective condition. So, this who the loop works. 
