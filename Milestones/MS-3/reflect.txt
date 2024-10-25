@@ -1,0 +1,132 @@
+
+###########################################################################
+
+                              Reflection
+                             Milestone - #3
+Full Name  : Tejasvi Nitinkumar Parmar
+Section    : ZDD
+
+Authenticity Declaration:
+
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+###########################################################################
+
+
+
+
+
+ANSWER - 01 
+In the MS1 of my code I use the strlen() & strcpy() at two places of the functions are 
+a)void displayFormattedPhone(const char* string) 
+b)void inputCString(char* String, int minChar, int maxChar)
+
+a.1)Explanation of:-
+ void displayFormattedPhone(const char* string)
+
+{
+    char character[MAXIMUM_NUMBER] = { 0 }; 
+    int charaterNum, loop = 1;
+
+   // rest  of the code //..........
+    
+    strcpy(String, character);
+}
+ 
+this string library use to copy the code from the another string (copies the entire character & including the null terminator.
+
+
+b.1)Explanation of:-
+void displayFormattedPhone(const char* string) 
+{
+    int characterNum = 0, length;
+    int loop = 1; 
+
+    if (string != NULL) 
+    {
+        length = strlen(string);
+
+       // rest of the code ...........
+}
+
+here this library is used to calculate the lenght of the input string & this doesn't count this  '\0' while calculating the lenght(this will check  the string has exactly 10 characters or not).
+
+It helps me to manage my code's difficulties after using the string library.By this, i don't need to write the multiple lines of code.It provides me the good efficiency that not only saves time but also saves the memory & apart from this it makes the code faster than manually code.
+
+
+ANSWER - 02 
+At many section of my code, I used the string library as: strcpy(),strclen(),strncpy(),and strcmp() to make my code easy and readable, the effciency of string library that makes them faster than equivalent code that might we right manually.
+Therefore, the two copying string library, I used in the code are strcpy() and strncpy():
+1) The strcpy() used in inputPhoneData function-
+   void inputPhoneData(struct Phone* phone)
+{
+    int selection;
+    
+// rest of the code //..........
+
+    switch (selection)
+    {
+    case 1:
+        strcpy(phone->description, "CELL");
+        break;
+    case 2:
+        strcpy(phone->description, "HOME");
+        break;
+    case 3:
+        strcpy(phone->description, "WORK");
+        break;
+    case 4:
+        strcpy(phone->description, "TBD");
+        break;
+    default:
+        break;
+    }
+ 
+     // rest of the code //........
+}
+
+here is the explanation of code that how it works: first of all this library of copying is simply used to copy the data from one location to another. So, basically I use this use inside the switch case method, this statement set the description field according to the user's selection. If the user select 1, so in case 1:
+        strcpy(phone->description, "CELL");
+        break; (copies the string CELL into phone->description) and this makes the code so easy to get the data of particular field.The rest of case are also works as it is.
+
+
+2) The strncpy() used in the removepatient function-
+ 
+void removePatient(struct Patient patient[], int max)
+{
+    int patientNum, find;
+    char characterSelect;
+
+    // rest of the code // ........
+
+        printf("\n");
+        displayPatientData(&patient[find], FMT_FORM);
+        printf("\n");
+        printf("Are you sure you want to remove this patient record? (y/n): ");
+        characterSelect = inputCharOption("yn");
+        if (characterSelect == 'y')
+        {
+            patient[find].patientNumber = 0;
+            strncpy(patient[find].name, "", sizeof(patient[find].name));
+            strncpy(patient[find].phone.number, "", sizeof(patient[find].phone.number));
+            strncpy(patient[find].phone.description, "", sizeof(patient[find].phone.description));
+
+            printf("Patient record has been removed!");
+        }
+        
+        // rest of the code //......
+}
+
+here is the explanation of code that how it works: first of all this library of copying is simply used to copy the number of characters from one string to another. So, basically I use this  as strncpy(patient[find].name, "", sizeof(patient[find].name)); like this first it ask the user to confirm that they want to remove the patient's record if yes so enters 'y', clears the name of patient from the string with the help of strncpy(), similarly work for others to remove the phone number & phone description.
+
+
+
+ANSWER - 03
+In my view, milestone 3's maintenance of appointments in ascending order according to time and date ensures correct scheduling and effective access. A new appointment can be added and immediately placed into its sorted spot in the list, negating the need for further sorting. Similarly, if an appointment is modifiedâ€”that is, rescheduledâ€”its listing position can also be modified to maintain the original hierarchy of importance. If something changes, this technique ensures that the list remains sorted.
+Right in my code I use the bubble sort method as the appointments are compared based on their converted minutes and if the two appointments are found they swapped the value.
+
+To improve the potential areas:
+a) bubble sort simply to implement but not the most efficient sorting algorithms(specially for the large data.
+
+b)The appointment structure and sorting function are closely related to the sorting logic.(improve the modularity), provide more flexibility and reusability in the code.
