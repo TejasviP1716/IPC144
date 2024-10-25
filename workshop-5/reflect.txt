@@ -1,0 +1,35 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #5
+Full Name  : Tejasvi Nitinkumar Parmar
+Student ID#:
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+Answer - 01 
+As, we use the for loop iteration to counter the value such as if its true then loop contiune and if false the loop will terminate.Let's take an example from my code as use the 'for loop' for the LOGS DAYS. LOG DAYS are defined as Marcos as they print the line of error 
+printf("      ERROR: Rating must be between 0.0 and 5.0 inclusive!\n");
+
+for (i = 1; i <= LOG_DAYS; i++) - this will print the logs days from 1 to untill the loop ends .
+
+
+Answer - 02
+For the months i choose the switch case construct because we have to check the months multiple times . And this will make code more easy and readable . If we print months for 5 then it will print MAY 
+so we use switch case as we can for all the 12 months .
+ switch (months)
+        {
+        case 1:
+            printf("JAN");
+            break;
+
+Answer - 03
+the three advantages of using variables and macros in the code:
+a) it will easy to modify the code  , we can change the values directly in macros and in variable as i took LOGS_DAYS 3. it will print only 3 log days , if I want 10 ,i make LOGS_DAYS 10.
+
+b) it provides  consistensy in code when we use same value for multiple times in the code it is more efficient to run the code.
+
+c) it makes the code more  redable and understandable for the programmer.
